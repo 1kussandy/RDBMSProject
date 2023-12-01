@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Tag</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add Tag</h1>
+    <form id="tagForm" action="/addTag" method="POST">
+      <input type="text" name="tag_id" placeholder="Tag ID" required><br><br>
+      <input type="text" name="name" placeholder="Tag Name" required><br><br>
+      <button type="submit">Add Tag</button>
+    </form>
+  </div>
+
+  <script src="tag.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Post</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Create Post</h1>
+    <form id="postForm" action="/addPost" method="POST">
+      <input type="text" name="user_id" placeholder="User ID" required><br><br>
+      <input type="text" name="post_title" placeholder="Post Title" required><br><br>
+     
+      <input type="text" name="date" placeholder="Date (YYYY-MM-DD)" required><br><br>
+      <textarea name="content" placeholder="Content" required></textarea><br><br>
+      <button type="submit">Create Post</button>
+    </form>
+  </div>
+
+  <script src="post.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #addPostBtn {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  #addPostBtn:hover {
+    background-color: #45a049;
+  }
+  
+  #postList {
+    margin-top: 30px;
+  }
+  
+  #posts {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #posts li {
+    margin-bottom: 40px; /* Increased margin to create space between posts */
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px; /* Increased padding to create more space */
+  }
+  
+  #posts h4 {
+    margin-top: 0; /* Reset margin for h4 */
+    font-size: 20px; /* Larger font size for post title */
+    color: #333;
+  }
+  
+  #posts p {
+    margin-top: 10px; /* Space between post title and content */
+    color: #666;
+  }
+  

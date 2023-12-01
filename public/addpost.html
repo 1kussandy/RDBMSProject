@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create a Post</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Create a New Post</h1>
+    <form id="postForm" action="/create_post" method="POST">
+      <input type="text" name="postTitle" placeholder="Post Title" required><br><br>
+      <textarea name="postContent" placeholder="Write your post here" required></textarea><br><br>
+      <!-- Hidden input to store user_id, retrieve it from session or authentication -->
+
+      <label>Post Category:</label>
+      <select name="category">
+        <option value="Select" id="0">Select one</option>
+        <option value="News" id="1">News</option>
+        <option value="Entertainment" id="2">Entertainment</option>
+        <option value="Politics" id="3">Politics</option>
+        <option value="Science" id="4">Science</option>
+        <option value="Sports" id="5">Sports</option>
+
+
+
+      </select>
+      
+
+
+      </select><br><br>
+
+      <input type="hidden" name="userId" value="1"> <!-- Replace with actual user_id -->
+      <button type="submit">Create Post</button>
+    </form>
+  </div>
+
+  <script src="create_post.js"></script>
+</body>
+</html>
