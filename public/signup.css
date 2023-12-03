@@ -1,0 +1,58 @@
+/* General styling for body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* General styling for content wrapper */
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Styling for container */
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+/* Styling for h1 */
+.container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Styling for form elements */
+#signupForm input[type="text"],
+#signupForm input[type="password"],
+#signupForm input[type="email"],
+#signupForm select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#signupForm button {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#signupForm button:hover {
+  background-color: #0056b3;
+}

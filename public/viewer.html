@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Writer User Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="viewer.css">
 </head>
 <body>
   <div class="container">
@@ -13,6 +13,10 @@
     
     <!-- Section to Display List of Posts -->
     <div id="postList">
+      <button onclick="sortPostsByComments()" style="background-color: blue; color: white; border: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; transition: background-color 0.3s ease-in-out;">
+        SortPostsBy TotalComments
+      </button>
+      
       <h2>ALL Posts</h2>
       <!-- List of posts will be displayed here -->
       <ul id="posts">

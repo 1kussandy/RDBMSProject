@@ -168,9 +168,9 @@ app.get('/writer_user', (req, res) => {
   
 
 
+// RollBACK Deletes Posts
 
-
-// Assuming your Express app instance is defined as 'app'
+// 
 app.delete('/writer_user/:postId', (req, res) => {
     const postId = req.params.postId; // Retrieve post ID from request parameters
   
@@ -301,7 +301,11 @@ app.post('/save-comment', (req, res) => {
   
     // Perform the database query to insert the comment into the like_comment table
     db.query('INSERT INTO like_comment (post_id, viewer_id, comment_text) VALUES (?, ?, ?)', [post_id, viewerId, comment], (err, result) => {
-      if (err) {
+       try {
+        console.log('Comment saved successfully');
+        res.status(200).json({ message: 'Comment saved successfully' });
+      }
+      catch (err) {
         console.error('Error saving comment:', err);
         if (err.code === 'ER_DUP_ENTRY') {
           // Handle duplicate entry error if required
@@ -309,9 +313,6 @@ app.post('/save-comment', (req, res) => {
         } else {
           res.status(500).json({ error: 'Error saving comment' });
         }
-      } else {
-        console.log('Comment saved successfully');
-        res.status(200).json({ message: 'Comment saved successfully' });
       }
     });
   });    
@@ -333,7 +334,6 @@ app.get('/writer_user/tags/:postId', (req, res) => {
       res.status(500).json({ error: 'Error fetching tags' });
     } else {
       const tags = results.map(row => ({ name: row.name }));
-      console.log('Fetched tags:', tags); // Log fetched tags
       res.status(200).json({ tags });
     }
   });
@@ -649,6 +649,60 @@ function getTagsForPost(postId) {
 
 
 
+
+
+
+
+
+
+
+
+// index.js (or your route file)
+
+
+
+
+
+
+// Endpoint to handle sorting posts by the total number of comments
+app.get('/sort-by-comments', (req, res) => {
+  // Perform a database query to retrieve posts sorted by total comments
+  db.query('SELECT post.*, COUNT(like_comment.post_id) AS total_comments FROM post LEFT JOIN like_comment ON post.post_id = like_comment.post_id GROUP BY post.post_id ORDER BY total_comments DESC', (err, results) => {
+    if (err) {
+      console.error('Error sorting posts by comments:', err);
+      res.status(500).json({ error: 'Error sorting posts by comments' });
+    } else {
+      console.log('Posts sorted by comments successfully');
+      console.log(results)
+      res.status(200).json(results);
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+///edit post
+
+
+app.put('/update_post/:postId', (req, res) => {
+  const postId = req.params.postId;
+  const { newTitle, newContent } = req.body;
+
+  db.query('UPDATE post SET post_title = ?, content = ? WHERE post_id = ?', [newTitle, newContent, postId], (err, result) => {
+    if (err) {
+      console.error('Error updating post:', err);
+      res.status(500).json({ error: 'Error updating post' });
+    } else {
+      res.status(200).json({ message: 'Post updated successfully' });
+    }
+  });
+});
 
 
 

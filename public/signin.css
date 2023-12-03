@@ -1,0 +1,49 @@
+/* General styling for body */
+/* General styling for body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+/* Styling for container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column; /* Added to align items vertically */
+}
+
+/* Styling for h1 */
+.container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+  /* Styling for form elements */
+  #signinForm input[type="text"],
+  #signinForm input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  #signinForm button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #signinForm button:hover {
+    background-color: #0056b3;
+  }
+  
